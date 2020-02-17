@@ -34,13 +34,9 @@ public class Main {
         final Person person2 = new Person("Zac", "Mason", 28);
         final Person person3 = new Person("Jonathan", "Brown", 32);
 
-        Function<Person, Integer> function1 = Person::getAge;
-        Function<Person, String> function2 = Person::getFirstName;
-        Function<Person, String> function3 = Person::getLastName;
-
-        Comparator<Person> comparatorByAge = Comparator.comparing(function1);
-        Comparator<Person> comparatorByFirstName = (p1, p2) -> p2.getFirstName().compareTo(p1.getFirstName());
-        Comparator<Person> comparatorByLastName = (p1, p2) -> p1.getLastName().compareTo(p2.getLastName());
+        Comparator<Person> comparatorByAge = Comparator.comparing(Person::getAge);
+        Comparator<Person> comparatorByFirstName = Comparator.comparing(Person::getFirstName);
+        Comparator<Person> comparatorPerson = comparatorByAge.thenComparing(comparatorByFirstName);
 
         Person[] team = new Person[] { person1, person2, person3 };
         System.out.println(team[0]);
