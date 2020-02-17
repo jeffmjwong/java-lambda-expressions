@@ -31,5 +31,8 @@ public class Main {
 //                System.out.println("It works! - " + i);
 //            }
 //        });
+
+        final Person person1 = new Person("James", "Mason", 28);
+        System.out.println(person1);
     }
 }
