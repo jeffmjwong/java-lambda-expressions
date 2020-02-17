@@ -33,18 +33,26 @@ public class Main {
 //        });
 
         final Person person1 = new Person("Antonie", "Peens", 35);
-        final Person person2 = new Person("James", "Mason", 28);
+        final Person person2 = new Person("Zac", "Mason", 28);
         final Person person3 = new Person("Jonathan", "Brown", 32);
 
         Comparator<Person> comparatorByAge = (p1, p2) -> p2.getAge() - p1.getAge();
+        Comparator<Person> comparatorByFirstName = (p1, p2) -> p2.getFirstName().compareTo(p1.getFirstName());
 
         Person[] team = new Person[] { person1, person2, person3 };
         System.out.println(team[0]);
         System.out.println(team[1]);
         System.out.println(team[2]);
+        System.out.println("------");
         Arrays.sort(team, comparatorByAge);
         System.out.println(team[0]);
         System.out.println(team[1]);
         System.out.println(team[2]);
+        System.out.println("------");
+        Arrays.sort(team, comparatorByFirstName);
+        System.out.println(team[0]);
+        System.out.println(team[1]);
+        System.out.println(team[2]);
+        System.out.println("------");
     }
 }
