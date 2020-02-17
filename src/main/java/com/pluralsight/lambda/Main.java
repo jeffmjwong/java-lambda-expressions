@@ -23,12 +23,10 @@ public class Main {
 //        System.out.println(strings[3]);
 //        System.out.println(strings[4]);
 
-        final Runnable runnable1 = () -> {
+        Executors.newSingleThreadExecutor().execute(() -> {
             for (int i = 0; i < 10; i++) {
                 System.out.println("It works! - " + i);
             }
-        };
-
-        Executors.newSingleThreadExecutor().execute(runnable1);
+        });
     }
 }
