@@ -36,13 +36,13 @@ public class Main {
         final Person person2 = new Person("James", "Mason", 28);
         final Person person3 = new Person("Jonathan", "Brown", 32);
 
-        Comparator<Person> comparator2 = (p1, p2) -> p2.getAge() - p1.getAge();
+        Comparator<Person> comparatorByAge = (p1, p2) -> p2.getAge() - p1.getAge();
 
         Person[] team = new Person[] { person1, person2, person3 };
         System.out.println(team[0]);
         System.out.println(team[1]);
         System.out.println(team[2]);
-        Arrays.sort(team, comparator2);
+        Arrays.sort(team, comparatorByAge);
         System.out.println(team[0]);
         System.out.println(team[1]);
         System.out.println(team[2]);
