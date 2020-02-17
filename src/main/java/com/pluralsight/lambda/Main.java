@@ -36,27 +36,8 @@ public class Main {
 
         Comparator<Person> comparatorByAge = Comparator.comparing(Person::getAge);
         Comparator<Person> comparatorByFirstName = Comparator.comparing(Person::getFirstName);
-        Comparator<Person> comparatorPerson = comparatorByAge.thenComparing(comparatorByFirstName);
-
-        Person[] team = new Person[] { person1, person2, person3 };
-        System.out.println(team[0]);
-        System.out.println(team[1]);
-        System.out.println(team[2]);
-        System.out.println("------");
-//        Arrays.sort(team, comparatorByAge);
-//        System.out.println(team[0]);
-//        System.out.println(team[1]);
-//        System.out.println(team[2]);
-//        System.out.println("------");
-//        Arrays.sort(team, comparatorByFirstName);
-//        System.out.println(team[0]);
-//        System.out.println(team[1]);
-//        System.out.println(team[2]);
-//        System.out.println("------");
-//        Arrays.sort(team, comparatorByLastName);
-//        System.out.println(team[0]);
-//        System.out.println(team[1]);
-//        System.out.println(team[2]);
-//        System.out.println("------");
+        Comparator<Person> comparator = Comparator.comparing(Person::getFirstName)
+                .thenComparing(Person::getLastName)
+                .thenComparing(Person::getAge);
     }
 }
