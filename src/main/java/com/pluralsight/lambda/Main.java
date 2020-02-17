@@ -35,7 +35,11 @@ public class Main {
         final Person person2 = new Person("Zac", "Mason", 28);
         final Person person3 = new Person("Jonathan", "Brown", 32);
 
-        Comparator<Person> comparatorByAge = (p1, p2) -> p2.getAge() - p1.getAge();
+        Function<Person, Integer> function1 = Person::getAge;
+        Function<Person, String> function2 = Person::getFirstName;
+        Function<Person, String> function3 = Person::getLastName;
+
+        Comparator<Person> comparatorByAge = Comparator.comparing(function1);
         Comparator<Person> comparatorByFirstName = (p1, p2) -> p2.getFirstName().compareTo(p1.getFirstName());
         Comparator<Person> comparatorByLastName = Comparator.comparing(Person::getLastName);
 
