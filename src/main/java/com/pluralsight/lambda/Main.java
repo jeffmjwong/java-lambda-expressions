@@ -1,7 +1,6 @@
 package com.pluralsight.lambda;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.concurrent.Executors;
 import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
@@ -41,27 +40,27 @@ public class Main {
 
         Comparator<Person> comparatorByAge = Comparator.comparing(function1);
         Comparator<Person> comparatorByFirstName = (p1, p2) -> p2.getFirstName().compareTo(p1.getFirstName());
-        Comparator<Person> comparatorByLastName = Comparator.comparing(Person::getLastName);
+        Comparator<Person> comparatorByLastName = (p1, p2) -> p1.getLastName().compareTo(p2.getLastName());
 
         Person[] team = new Person[] { person1, person2, person3 };
         System.out.println(team[0]);
         System.out.println(team[1]);
         System.out.println(team[2]);
         System.out.println("------");
-        Arrays.sort(team, comparatorByAge);
-        System.out.println(team[0]);
-        System.out.println(team[1]);
-        System.out.println(team[2]);
-        System.out.println("------");
-        Arrays.sort(team, comparatorByFirstName);
-        System.out.println(team[0]);
-        System.out.println(team[1]);
-        System.out.println(team[2]);
-        System.out.println("------");
-        Arrays.sort(team, comparatorByLastName);
-        System.out.println(team[0]);
-        System.out.println(team[1]);
-        System.out.println(team[2]);
-        System.out.println("------");
+//        Arrays.sort(team, comparatorByAge);
+//        System.out.println(team[0]);
+//        System.out.println(team[1]);
+//        System.out.println(team[2]);
+//        System.out.println("------");
+//        Arrays.sort(team, comparatorByFirstName);
+//        System.out.println(team[0]);
+//        System.out.println(team[1]);
+//        System.out.println(team[2]);
+//        System.out.println("------");
+//        Arrays.sort(team, comparatorByLastName);
+//        System.out.println(team[0]);
+//        System.out.println(team[1]);
+//        System.out.println(team[2]);
+//        System.out.println("------");
     }
 }
