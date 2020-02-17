@@ -13,7 +13,7 @@ public class Main {
         strings[3] = "dilator";
         strings[4] = "ear";
 
-        Comparator<String> comparator1 = (final String s1, final String s2) -> Integer.compare(s1.length(), s2.length());
+        Comparator<String> comparator1 = (s1, s2) -> Integer.compare(s1.length(), s2.length());
 
         Arrays.sort(strings, comparator1);
 
