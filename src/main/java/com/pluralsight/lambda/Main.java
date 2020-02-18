@@ -7,6 +7,7 @@ import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.IntFunction;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
@@ -24,11 +25,8 @@ public class Main {
 //        List<String> list2 = list1.stream().filter(predicate1).collect(Collectors.toList());
 //        System.out.println(list2);
 
-        BinaryOperator<String> operator1 = (s1, s2) -> s1 + s2;
-        System.out.println(operator1.apply("kk", "gogo"));
-
-//        BiFunction<String, String, Integer> function1 = (s1, s2) -> s1.length() + s2.length();
-//        System.out.println(function1.apply("ab", "cde"));
+        IntFunction<Double> function1 = Double::valueOf;
+        System.out.println(function1.apply(55));
     }
 
     private static void useComparator() {
