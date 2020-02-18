@@ -3,6 +3,7 @@ package com.pluralsight.lambda;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BiConsumer;
+import java.util.function.BiFunction;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -21,8 +22,8 @@ public class Main {
 //        List<String> list2 = list1.stream().filter(predicate1).collect(Collectors.toList());
 //        System.out.println(list2);
 
-        Function<String, Integer> function1 = String::length;
-        System.out.println(function1.apply("kicklol"));
+        BiFunction<String, String, Integer> function1 = (s1, s2) -> s1.length() + s2.length();
+        System.out.println(function1.apply("ab", "cde"));
     }
 
     private static void useComparator() {
