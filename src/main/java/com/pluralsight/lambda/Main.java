@@ -2,8 +2,10 @@ package com.pluralsight.lambda;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -18,8 +20,8 @@ public class Main {
 //        List<String> list2 = list1.stream().filter(predicate1).collect(Collectors.toList());
 //        System.out.println(list2);
 
-        Consumer<String> consumer1 = System.out::println;
-        consumer1.accept("essasdf");
+        Supplier<String> supplier1 = () -> "aabbcc";
+        System.out.println(supplier1.get());
     }
 
     private static void useComparator() {
