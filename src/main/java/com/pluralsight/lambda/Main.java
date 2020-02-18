@@ -1,8 +1,21 @@
 package com.pluralsight.lambda;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+
 public class Main {
     public static void main(String[] args) {
+        Predicate<String> predicate1 = s -> s.length() == 3;
 
+        List<String> list1 = new ArrayList<>();
+        list1.add("ear");
+        list1.add("jim");
+        list1.add("dilan");
+
+        List<String> list2 = list1.stream().filter(predicate1).collect(Collectors.toList());
+        System.out.println(list2);
     }
 
     private static void useComparator() {
