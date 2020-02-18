@@ -8,6 +8,7 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
+import java.util.function.UnaryOperator;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -22,8 +23,11 @@ public class Main {
 //        List<String> list2 = list1.stream().filter(predicate1).collect(Collectors.toList());
 //        System.out.println(list2);
 
-        BiFunction<String, String, Integer> function1 = (s1, s2) -> s1.length() + s2.length();
-        System.out.println(function1.apply("ab", "cde"));
+        UnaryOperator<String> operator1 = String::toUpperCase;
+        System.out.println(operator1.apply("kk"));
+
+//        BiFunction<String, String, Integer> function1 = (s1, s2) -> s1.length() + s2.length();
+//        System.out.println(function1.apply("ab", "cde"));
     }
 
     private static void useComparator() {
