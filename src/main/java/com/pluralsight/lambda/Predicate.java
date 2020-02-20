@@ -1,4 +1,6 @@
 package com.pluralsight.lambda;
 
-public interface Predicate {
+@FunctionalInterface
+public interface Predicate<T> {
+    boolean test(T t);
 }

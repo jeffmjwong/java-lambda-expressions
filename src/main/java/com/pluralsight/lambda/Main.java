@@ -8,7 +8,6 @@ import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.IntFunction;
-import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
 import java.util.stream.Collectors;
@@ -16,7 +15,8 @@ import java.util.stream.Collectors;
 public class Main {
     public static void main(String[] args) {
         Predicate<String> predicate1 = s -> s.length() == 3;
-//
+        System.out.println(predicate1.test("ggggg"));
+
 //        List<String> list1 = new ArrayList<>();
 //        list1.add("ear");
 //        list1.add("jim");
@@ -24,9 +24,6 @@ public class Main {
 //
 //        List<String> list2 = list1.stream().filter(predicate1).collect(Collectors.toList());
 //        System.out.println(list2);
-
-        IntFunction<Double> function1 = Double::valueOf;
-        System.out.println(function1.apply(55));
     }
 
     private static void useComparator() {
