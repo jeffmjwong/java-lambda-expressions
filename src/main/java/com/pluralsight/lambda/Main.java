@@ -14,11 +14,12 @@ import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
-        Predicate<String> predicate1 = s -> s.length() < 5;
-        Predicate<String> predicate2 = s -> s.length() > 2;
+        Predicate<String> predicate1 = s -> s.length() < 3;
+        Predicate<String> predicate2 = s -> s.equals("ear");
 
         Predicate<String> predicate3 = predicate1.and(predicate2);
-        System.out.println(predicate3.test("ggg"));
+        Predicate<String> predicate4 = predicate1.or(predicate2);
+        System.out.println(predicate4.test("ear"));
     }
 
     private static void useComparator() {

@@ -7,4 +7,8 @@ public interface Predicate<T> {
     default Predicate<T> and(Predicate<T> p) {
         return t -> test(t) && p.test(t);
     }
+
+    default Predicate<T> or(Predicate<T> p) {
+        return t -> test(t) || p.test(t);
+    }
 }
