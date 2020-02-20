@@ -18,7 +18,7 @@ public class Main {
         Predicate<String> predicate2 = s -> s.length() > 2;
 
         Predicate<String> predicate3 = predicate1.and(predicate2);
-        System.out.println(predicate1.test("ggggg"));
+        System.out.println(predicate3.test("ggg"));
     }
 
     private static void useComparator() {
