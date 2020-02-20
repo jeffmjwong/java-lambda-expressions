@@ -14,16 +14,11 @@ import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
-        Predicate<String> predicate1 = s -> s.length() == 3;
-        System.out.println(predicate1.test("ggggg"));
+        Predicate<String> predicate1 = s -> s.length() < 5;
+        Predicate<String> predicate2 = s -> s.length() > 2;
 
-//        List<String> list1 = new ArrayList<>();
-//        list1.add("ear");
-//        list1.add("jim");
-//        list1.add("dilan");
-//
-//        List<String> list2 = list1.stream().filter(predicate1).collect(Collectors.toList());
-//        System.out.println(list2);
+        Predicate<String> predicate3 = predicate1.and(predicate2);
+        System.out.println(predicate1.test("ggggg"));
     }
 
     private static void useComparator() {
