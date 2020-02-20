@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
-//        Predicate<String> predicate1 = s -> s.length() == 3;
+        Predicate<String> predicate1 = s -> s.length() == 3;
 //
 //        List<String> list1 = new ArrayList<>();
 //        list1.add("ear");
