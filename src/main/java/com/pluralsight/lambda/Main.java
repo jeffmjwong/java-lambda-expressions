@@ -20,7 +20,11 @@ public class Main {
         Predicate<String> predicate3 = predicate1.and(predicate2);
         Predicate<String> predicate4 = predicate1.or(predicate2);
         Predicate<String> predicate5 = Predicate.isEqualsTo("Yes");
+        Predicate<Integer> predicate6 = Predicate.isEqualsTo(5);
         System.out.println(predicate5.test("Yes"));
+        System.out.println(predicate6.test(4));
+        System.out.println(predicate6.test(5));
+        System.out.println(predicate6.test(6));
     }
 
     private static void useComparator() {

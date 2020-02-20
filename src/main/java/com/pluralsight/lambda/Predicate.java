@@ -12,7 +12,7 @@ public interface Predicate<T> {
         return t -> test(t) || p.test(t);
     }
 
-    static Predicate<String> isEqualsTo(String s1) {
-        return s -> s.equals(s1);
+    static <U> Predicate<U> isEqualsTo(U u) {
+        return obj -> obj.equals(u);
     }
 }
