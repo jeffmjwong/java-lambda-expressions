@@ -19,7 +19,8 @@ public class Main {
 
         Predicate<String> predicate3 = predicate1.and(predicate2);
         Predicate<String> predicate4 = predicate1.or(predicate2);
-        System.out.println(predicate4.test("ear"));
+        Predicate<String> predicate5 = Predicate.isEqualsTo("Yes");
+        System.out.println(predicate5.test("Yes"));
     }
 
     private static void useComparator() {
