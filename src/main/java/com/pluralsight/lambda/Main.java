@@ -2,6 +2,10 @@ package com.pluralsight.lambda;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("hello lambda!");
+    }
+
+    private static void usePredicate() {
         CustomPredicate<String> customPredicate1 = s -> s.length() < 3;
         CustomPredicate<String> customPredicate2 = s -> s.equals("ear");
 
