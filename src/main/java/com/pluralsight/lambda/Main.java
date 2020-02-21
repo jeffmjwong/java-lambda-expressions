@@ -20,9 +20,9 @@ public class Main {
         final Person person2 = new Person("Zac", "Mason", 28);
         final Person person3 = new Person("Jonathan", "Brown", 32);
 
-        Comparator<Person> comparatorByAge = Comparator.comparing(Person::getAge);
-        Comparator<Person> comparatorByFirstName = Comparator.comparing(Person::getFirstName);
-        Comparator<Person> comparator = Comparator.comparing(Person::getFirstName)
+        CustomComparator<Person> customComparatorByAge = CustomComparator.comparing(Person::getAge);
+        CustomComparator<Person> customComparatorByFirstName = CustomComparator.comparing(Person::getFirstName);
+        CustomComparator<Person> customComparator = CustomComparator.comparing(Person::getFirstName)
                 .thenComparing(Person::getLastName)
                 .thenComparing(Person::getAge);
     }
