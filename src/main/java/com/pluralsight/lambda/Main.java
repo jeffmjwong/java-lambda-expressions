@@ -2,7 +2,9 @@ package com.pluralsight.lambda;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.function.UnaryOperator;
@@ -10,13 +12,19 @@ import java.util.function.UnaryOperator;
 public class Main {
     public static void main(String[] args) {
         List<Person> people = new ArrayList<>();
-        people.add(new Person("Tony", "Peens", 35));
-        people.add(new Person("Jonathan", "Brown", 25));
-        people.add(new Person("James", "Mason", 29));
+        Person tony = new Person("Tony", "Peens", 35);
+        Person jonathan = new Person("Jonathan", "Brown", 25);
+        Person james = new Person("James", "Mason", 29);
+        people.add(tony);
+        people.add(jonathan);
+        people.add(james);
 
-        Comparator<Person> c1 = Comparator.comparing(Person::getAge);
-        people.sort(c1);
-        System.out.println(people);
+        Map<String, Person> map1 = new HashMap<>();
+        map1.put("Tony", tony);
+        map1.put("Jonathan", jonathan);
+
+        map1.compute("Tony", (string, person) -> new Person(person.getFirstName(), string + " " + person.getLastName(), person.getAge()));
+        System.out.println(map1);
     }
 
     private static void usePredicate() {
