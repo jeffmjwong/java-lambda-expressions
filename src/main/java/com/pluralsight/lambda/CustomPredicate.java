@@ -1,18 +1,18 @@
 package com.pluralsight.lambda;
 
 @FunctionalInterface
-public interface Predicate<T> {
+public interface CustomPredicate<T> {
     boolean test(T t);
 
-    default Predicate<T> and(Predicate<T> p) {
+    default CustomPredicate<T> and(CustomPredicate<T> p) {
         return t -> test(t) && p.test(t);
     }
 
-    default Predicate<T> or(Predicate<T> p) {
+    default CustomPredicate<T> or(CustomPredicate<T> p) {
         return t -> test(t) || p.test(t);
     }
 
-    static <U> Predicate<U> isEqualsTo(U u) {
+    static <U> CustomPredicate<U> isEqualsTo(U u) {
         return obj -> obj.equals(u);
     }
 }

@@ -1,30 +1,18 @@
 package com.pluralsight.lambda;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.BiConsumer;
-import java.util.function.BiFunction;
-import java.util.function.BinaryOperator;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.IntFunction;
-import java.util.function.Supplier;
-import java.util.function.UnaryOperator;
-import java.util.stream.Collectors;
-
 public class Main {
     public static void main(String[] args) {
-        Predicate<String> predicate1 = s -> s.length() < 3;
-        Predicate<String> predicate2 = s -> s.equals("ear");
+        CustomPredicate<String> customPredicate1 = s -> s.length() < 3;
+        CustomPredicate<String> customPredicate2 = s -> s.equals("ear");
 
-        Predicate<String> predicate3 = predicate1.and(predicate2);
-        Predicate<String> predicate4 = predicate1.or(predicate2);
-        Predicate<String> predicate5 = Predicate.isEqualsTo("Yes");
-        Predicate<Integer> predicate6 = Predicate.isEqualsTo(5);
-        System.out.println(predicate5.test("Yes"));
-        System.out.println(predicate6.test(4));
-        System.out.println(predicate6.test(5));
-        System.out.println(predicate6.test(6));
+        CustomPredicate<String> customPredicate3 = customPredicate1.and(customPredicate2);
+        CustomPredicate<String> customPredicate4 = customPredicate1.or(customPredicate2);
+        CustomPredicate<String> customPredicate5 = CustomPredicate.isEqualsTo("Yes");
+        CustomPredicate<Integer> customPredicate6 = CustomPredicate.isEqualsTo(5);
+        System.out.println(customPredicate5.test("Yes"));
+        System.out.println(customPredicate6.test(4));
+        System.out.println(customPredicate6.test(5));
+        System.out.println(customPredicate6.test(6));
     }
 
     private static void useComparator() {
