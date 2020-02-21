@@ -1,8 +1,23 @@
 package com.pluralsight.lambda;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("hello lambda!");
+        List<Person> people = new ArrayList<>();
+        people.add(new Person("Tony", "Peens", 35));
+        people.add(new Person("Jonathan", "Brown", 25));
+        people.add(new Person("James", "Mason", 29));
+
+        Consumer<Person> c1 = System.out::println;
+        people.forEach(c1);
+
+        Predicate<Person> p1 = person -> person.getAge() > 30;
+        people.removeIf(p1);
+        System.out.println(people);
     }
 
     private static void usePredicate() {
