@@ -1,6 +1,7 @@
 package com.pluralsight.lambda;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
@@ -13,14 +14,8 @@ public class Main {
         people.add(new Person("Jonathan", "Brown", 25));
         people.add(new Person("James", "Mason", 29));
 
-        UnaryOperator<Person> u1 = p -> {
-            if (p.getAge() < 30) {
-                return p;
-            }
-
-            return new Person("Hello", "world", 32);
-        };
-        people.replaceAll(u1);
+        Comparator<Person> c1 = Comparator.comparing(Person::getAge);
+        people.sort(c1);
         System.out.println(people);
     }
 
