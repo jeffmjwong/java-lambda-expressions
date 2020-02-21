@@ -23,7 +23,7 @@ public class Main {
         map1.put("Tony", tony);
         map1.put("Jonathan", jonathan);
 
-        map1.computeIfAbsent("Tonyss", string -> new Person(string, string, 15));
+        map1.computeIfPresent("Tony", (string, person) -> new Person(string + person.getFirstName(), string + person.getLastName(), person.getAge()));
         System.out.println(map1);
     }
 
