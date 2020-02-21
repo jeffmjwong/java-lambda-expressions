@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
+import java.util.function.UnaryOperator;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,11 +13,14 @@ public class Main {
         people.add(new Person("Jonathan", "Brown", 25));
         people.add(new Person("James", "Mason", 29));
 
-        Consumer<Person> c1 = System.out::println;
-        people.forEach(c1);
+        UnaryOperator<Person> u1 = p -> {
+            if (p.getAge() < 30) {
+                return p;
+            }
 
-        Predicate<Person> p1 = person -> person.getAge() > 30;
-        people.removeIf(p1);
+            return new Person("Hello", "world", 32);
+        };
+        people.replaceAll(u1);
         System.out.println(people);
     }
 
