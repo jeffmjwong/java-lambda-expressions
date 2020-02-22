@@ -23,7 +23,10 @@ public class Main {
         map1.put("Tony", tony);
         map1.put("Jonathan", jonathan);
 
-        map1.computeIfPresent("Tony", (string, person) -> new Person(string + person.getFirstName(), string + person.getLastName(), person.getAge()));
+        Map<String, Person> map2 = new HashMap<>();
+        map2.put("James", james);
+
+        map1.merge("Tony", jonathan, (p1, p2) -> new Person(p1.getFirstName() + p2.getFirstName(), p1.getLastName() + p2.getLastName(), p1.getAge() + p2.getAge()));
         System.out.println(map1);
     }
 
