@@ -35,6 +35,7 @@ public class Main {
         map.get(paris).add(p1);
 
         map.computeIfAbsent(newYork, city -> new ArrayList<>()).add(p2);
+        map.computeIfAbsent(newYork, city -> new ArrayList<>()).add(p3);
 
         System.out.println("People from Paris: " + map.getOrDefault(paris, Collections.emptyList()));
         System.out.println("People from New York: " + map.getOrDefault(newYork, Collections.emptyList()));
