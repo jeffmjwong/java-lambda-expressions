@@ -13,7 +13,14 @@ import java.util.function.UnaryOperator;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello map function!");
+        Person p1 = new Person("Alice", "M", 23);
+        Person p2 = new Person("Brian", "S", 56);
+        Person p3 = new Person("Chelsea", "T", 46);
+
+        List<Person> people = new ArrayList<>(Arrays.asList(p1, p2, p3));
+        List<Integer> ages = Lists.map(people, p -> p.getAge());
+        List<Integer> agesGreaterThan20 = Lists.filter(ages, age -> age > 20);
+        int sum = Lists.reduce(agesGreaterThan20, (a1, a2) -> a1 + a2);
     }
 
     private static void useNewMethodsOfCollections() {
