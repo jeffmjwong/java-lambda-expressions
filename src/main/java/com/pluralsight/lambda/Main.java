@@ -23,7 +23,7 @@ public class Main {
 
 //        people.removeIf(p -> p.getAge() < 30);
 //        people.replaceAll(p -> new Person(p.getFirstName().toUpperCase(), p.getLastName(), p.getAge()));
-        people.sort(Comparator.comparing(Person::getAge));
+        people.sort(Comparator.comparing(Person::getAge).reversed());
 
         people.forEach(System.out::println);
     }
