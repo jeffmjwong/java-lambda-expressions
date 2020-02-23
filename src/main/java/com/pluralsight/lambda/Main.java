@@ -13,6 +13,10 @@ import java.util.function.UnaryOperator;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("Hello map function!");
+    }
+
+    private static void useNewMethodsOfCollections() {
         Person p1 = new Person("Alice", "M", 23);
         Person p2 = new Person("Brian", "S", 56);
         Person p3 = new Person("Chelsea", "T", 46);
