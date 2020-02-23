@@ -45,6 +45,7 @@ public class Main {
         map1.computeIfAbsent(shanghai, city -> new ArrayList<>()).add(p2);
         map1.computeIfAbsent(shanghai, city -> new ArrayList<>()).add(p3);
 
+        System.out.println("Map 1");
         map1.forEach((city, people) -> System.out.println(city + ": " + people));
 
         Map<City, List<Person>> map2 = new HashMap<>();
@@ -52,7 +53,16 @@ public class Main {
         map2.computeIfAbsent(paris, city -> new ArrayList<>()).add(p5);
         map2.computeIfAbsent(paris, city -> new ArrayList<>()).add(p6);
 
+        System.out.println("Map 2");
         map2.forEach((city, people) -> System.out.println(city + ": " + people));
+
+        map2.forEach((city, people) -> map1.merge(city, people, (pp1, pp2) -> {
+            pp1.addAll(pp2);
+            return pp1;
+        }));
+
+        System.out.println("Map 1");
+        map1.forEach((city, people) -> System.out.println(city + ": " + people));
     }
 
     private static void usePredicate() {
