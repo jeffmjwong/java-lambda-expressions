@@ -2,6 +2,7 @@ package com.pluralsight.lambda;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
@@ -19,8 +20,7 @@ public class Main {
         Person p5 = new Person("Erica", "L", 37);
         Person p6 = new Person("Francis", "K", 18);
 
-        List<Person> people = new ArrayList<>(Arrays.asList(p1, p2, p3, p4, p5, p6));
-
+//        List<Person> people = new ArrayList<>(Arrays.asList(p1, p2, p3, p4, p5, p6));
 //        people.removeIf(p -> p.getAge() < 30);
 //        people.replaceAll(p -> new Person(p.getFirstName().toUpperCase(), p.getLastName(), p.getAge()));
 //        people.sort(Comparator.comparing(Person::getAge).reversed());
@@ -29,6 +29,9 @@ public class Main {
         City newYork = new City("New York");
         City shanghai = new City("Shanghai");
         City paris = new City("Paris");
+
+        Map<City, List<Person>> map = new HashMap<>();
+        System.out.println("People from Paris: " + map.getOrDefault(paris, Collections.emptyList()));
     }
 
     private static void usePredicate() {
