@@ -1,6 +1,7 @@
 package com.pluralsight.lambda;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
@@ -11,24 +12,16 @@ import java.util.function.UnaryOperator;
 
 public class Main {
     public static void main(String[] args) {
-        List<Person> people = new ArrayList<>();
-        Person tony = new Person("Tony", "Peens", 35);
-        Person jonathan = new Person("Jonathan", "Brown", 25);
-        Person james = new Person("James", "Mason", 29);
-        people.add(tony);
-        people.add(jonathan);
-        people.add(james);
+        Person p1 = new Person("Alice", "M", 23);
+        Person p2 = new Person("Brian", "S", 56);
+        Person p3 = new Person("Chelsea", "T", 46);
+        Person p4 = new Person("David", "W", 28);
+        Person p5 = new Person("Erica", "L", 37);
+        Person p6 = new Person("Francis", "K", 18);
 
-        Map<String, Person> map1 = new HashMap<>();
-        map1.put("Tony", tony);
-        map1.put("Jonathan", jonathan);
+        List<Person> people = new ArrayList<>(Arrays.asList(p1, p2, p3, p4, p5, p6));
 
-        Map<String, Person> map2 = new HashMap<>();
-        map2.put("James", james);
-
-        map2.forEach((s, p) -> map1.merge(s, p, (p1, p2) -> new Person(p2.getFirstName(), p2.getLastName(), p2.getAge())));
-
-        System.out.println(map1);
+        people.forEach(System.out::println);
     }
 
     private static void usePredicate() {
