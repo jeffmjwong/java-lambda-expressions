@@ -18,9 +18,10 @@ public class Main {
         Person p3 = new Person("Chelsea", "T", 46);
 
         List<Person> people = new ArrayList<>(Arrays.asList(p1, p2, p3));
-        List<Integer> ages = Lists.map(people, p -> p.getAge());
-        List<Integer> agesGreaterThan20 = Lists.filter(ages, age -> age > 20);
-        int sum = Lists.reduce(agesGreaterThan20, (a1, a2) -> a1 + a2);
+        List<Integer> ages = Lists.map(people, Person::getAge);
+        System.out.println(ages);
+//        List<Integer> agesGreaterThan20 = Lists.filter(ages, age -> age > 20);
+//        int sum = Lists.reduce(agesGreaterThan20, (a1, a2) -> a1 + a2);
     }
 
     private static void useNewMethodsOfCollections() {
