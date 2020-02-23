@@ -23,9 +23,12 @@ public class Main {
 
 //        people.removeIf(p -> p.getAge() < 30);
 //        people.replaceAll(p -> new Person(p.getFirstName().toUpperCase(), p.getLastName(), p.getAge()));
-        people.sort(Comparator.comparing(Person::getAge).reversed());
+//        people.sort(Comparator.comparing(Person::getAge).reversed());
+//        people.forEach(System.out::println);
 
-        people.forEach(System.out::println);
+        City newYork = new City("New York");
+        City shanghai = new City("Shanghai");
+        City paris = new City("Paris");
     }
 
     private static void usePredicate() {
