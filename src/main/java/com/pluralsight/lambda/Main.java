@@ -31,6 +31,9 @@ public class Main {
         City paris = new City("Paris");
 
         Map<City, List<Person>> map = new HashMap<>();
+        map.putIfAbsent(paris, new ArrayList<>());
+        map.get(paris).add(p1);
+
         System.out.println("People from Paris: " + map.getOrDefault(paris, Collections.emptyList()));
     }
 
