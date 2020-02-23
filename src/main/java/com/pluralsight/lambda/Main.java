@@ -21,7 +21,8 @@ public class Main {
 
         List<Person> people = new ArrayList<>(Arrays.asList(p1, p2, p3, p4, p5, p6));
 
-        people.removeIf(p -> p.getAge() < 30);
+//        people.removeIf(p -> p.getAge() < 30);
+        people.replaceAll(p -> new Person(p.getFirstName().toUpperCase(), p.getLastName(), p.getAge()));
 
         people.forEach(System.out::println);
     }
