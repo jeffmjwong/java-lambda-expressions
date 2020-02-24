@@ -2,6 +2,7 @@ package com.pluralsight.lambda;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -13,5 +14,13 @@ public class Lists {
 
     public static <T> List<T> filter(List<T> list, Predicate<T> predicate) {
         return list.stream().filter(predicate).collect(Collectors.toList());
+    }
+
+    public static int reduce(List<Integer> list, BinaryOperator<Integer> operator) {
+        int sum = 0;
+        for (int i : list) {
+            sum = operator.apply(sum, i);
+        }
+        return sum;
     }
 }

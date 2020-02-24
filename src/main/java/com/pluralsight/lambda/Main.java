@@ -20,8 +20,8 @@ public class Main {
         List<Person> people = new ArrayList<>(Arrays.asList(p1, p2, p3));
         List<Integer> ages = Lists.map(people, Person::getAge);
         List<Integer> agesGreaterThan20 = Lists.filter(ages, age -> age > 30);
-        System.out.println(agesGreaterThan20);
-//        int sum = Lists.reduce(agesGreaterThan20, (a1, a2) -> a1 + a2);
+        int sum = Lists.reduce(agesGreaterThan20, Integer::sum);
+        System.out.println(sum);
     }
 
     private static void useNewMethodsOfCollections() {
