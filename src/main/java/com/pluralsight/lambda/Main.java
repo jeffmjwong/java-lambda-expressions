@@ -7,21 +7,34 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.function.UnaryOperator;
 
 public class Main {
     public static void main(String[] args) {
-        Person p1 = new Person("Alice", "M", 23);
-        Person p2 = new Person("Brian", "S", 56);
-        Person p3 = new Person("Chelsea", "T", 46);
+//        Person p1 = new Person("Alice", "M", 23);
+//        Person p2 = new Person("Brian", "S", 56);
+//        Person p3 = new Person("Chelsea", "T", 46);
+//
+//        List<Person> people = new ArrayList<>(Arrays.asList(p1, p2, p3));
+//        List<Integer> ages = Lists.map(people, Person::getAge);
+//        List<Integer> agesGreaterThan20 = Lists.filter(ages, age -> age > 50);
+//        int sum = Lists.reduce(agesGreaterThan20, Integer::max);
+//        System.out.println(sum);
 
-        List<Person> people = new ArrayList<>(Arrays.asList(p1, p2, p3));
-        List<Integer> ages = Lists.map(people, Person::getAge);
-        List<Integer> agesGreaterThan20 = Lists.filter(ages, age -> age > 50);
-        int sum = Lists.reduce(agesGreaterThan20, Integer::max);
-        System.out.println(sum);
+        List<Integer> ints = Arrays.asList(0,1,2,3,4,5,6,7,8,9);
+        List<Integer> ints1 = Arrays.asList(0,1,2,3,4);
+        List<Integer> ints2 = Arrays.asList(5,6,7,8,9);
+        BinaryOperator<Integer> op = Integer::sum;
+
+        int reduction = reduce(ints, 0, op);
+        System.out.println(reduction);
+    }
+
+    private static int reduce(List<Integer> list, int identity, BinaryOperator<Integer> op) {
+        return 2;
     }
 
     private static void useNewMethodsOfCollections() {
