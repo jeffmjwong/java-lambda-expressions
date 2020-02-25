@@ -27,7 +27,7 @@ public class Main {
         List<Integer> ints = Arrays.asList(0,1,2,3,4,5,6,7,8,9);
         List<Integer> ints1 = Arrays.asList(0,1,2,3,4);
         List<Integer> ints2 = Arrays.asList(5,6,7,8,9);
-        BinaryOperator<Integer> op = (i1, i2) -> (i1 + i2) * (i1 + i2);
+        BinaryOperator<Integer> op = (i1, i2) -> i1;
 
 //        int reduction = reduce(ints, 0, op);
 
