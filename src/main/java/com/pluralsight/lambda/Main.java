@@ -29,12 +29,16 @@ public class Main {
         List<Integer> ints2 = Arrays.asList(5,6,7,8,9);
         BinaryOperator<Integer> op = Integer::sum;
 
-        int reduction = reduce(ints, 0, op);
+        int reduction = reduce(ints2, 0, op);
         System.out.println(reduction);
     }
 
-    private static int reduce(List<Integer> list, int identity, BinaryOperator<Integer> op) {
-        return 2;
+    private static int reduce(List<Integer> values, int valueIfEmpty, BinaryOperator<Integer> reduction) {
+        int result = valueIfEmpty;
+        for (int value : values) {
+            result = reduction.apply(result, value);
+        }
+        return result;
     }
 
     private static void useNewMethodsOfCollections() {
