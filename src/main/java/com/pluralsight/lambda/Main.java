@@ -22,6 +22,7 @@ public class Main {
         List<Person> people = new ArrayList<>(Arrays.asList(p1, p2, p3));
         Stream<Person> stream = people.stream();
         System.out.println(stream);
+        System.out.println(Stream.empty());
 
 //        List<Integer> ages = Lists.map(people, Person::getAge);
 //        List<Integer> agesGreaterThan20 = Lists.filter(ages, age -> age > 50);
