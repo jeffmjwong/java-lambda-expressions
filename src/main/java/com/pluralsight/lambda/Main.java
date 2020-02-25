@@ -11,14 +11,18 @@ import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.function.UnaryOperator;
+import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
-//        Person p1 = new Person("Alice", "M", 23);
-//        Person p2 = new Person("Brian", "S", 56);
-//        Person p3 = new Person("Chelsea", "T", 46);
-//
-//        List<Person> people = new ArrayList<>(Arrays.asList(p1, p2, p3));
+        Person p1 = new Person("Alice", "M", 23);
+        Person p2 = new Person("Brian", "S", 56);
+        Person p3 = new Person("Chelsea", "T", 46);
+
+        List<Person> people = new ArrayList<>(Arrays.asList(p1, p2, p3));
+        Stream<Person> stream = people.stream();
+        System.out.println(stream);
+
 //        List<Integer> ages = Lists.map(people, Person::getAge);
 //        List<Integer> agesGreaterThan20 = Lists.filter(ages, age -> age > 50);
 //        int sum = Lists.reduce(agesGreaterThan20, Integer::max);
