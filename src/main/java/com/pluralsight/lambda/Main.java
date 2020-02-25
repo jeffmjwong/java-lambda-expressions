@@ -2,7 +2,6 @@ package com.pluralsight.lambda;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
@@ -11,6 +10,7 @@ import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.function.UnaryOperator;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Main {
@@ -22,7 +22,8 @@ public class Main {
         List<Person> people = new ArrayList<>(Arrays.asList(p1, p2, p3));
         Stream<Person> stream = people.stream();
         System.out.println(stream);
-        System.out.println(Stream.empty());
+        System.out.println(Stream.empty().collect(Collectors.toList()));
+        System.out.println(Stream.of("one", "two").collect(Collectors.toList()));
 
 //        List<Integer> ages = Lists.map(people, Person::getAge);
 //        List<Integer> agesGreaterThan20 = Lists.filter(ages, age -> age > 50);
