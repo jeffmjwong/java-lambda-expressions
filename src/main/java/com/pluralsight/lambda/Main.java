@@ -29,8 +29,8 @@ public class Main {
         List<Integer> ints2 = Arrays.asList(5,6,7,8,9);
         BinaryOperator<Integer> op = Integer::sum;
 
-        int reduction = reduce(ints2, 0, op);
-        System.out.println(reduction);
+        int reduction = reduce(ints, 0, op);
+        System.out.println("Reduction: " + reduction);
     }
 
     private static int reduce(List<Integer> values, int valueIfEmpty, BinaryOperator<Integer> reduction) {
