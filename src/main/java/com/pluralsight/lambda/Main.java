@@ -18,12 +18,15 @@ public class Main {
         Person p1 = new Person("Alice", "M", 23);
         Person p2 = new Person("Brian", "S", 56);
         Person p3 = new Person("Chelsea", "T", 46);
+        Person p4 = new Person("Dilan", "R", 31);
+        Person p5 = new Person("Elliot", "W", 37);
 
-        List<Person> people = new ArrayList<>(Arrays.asList(p1, p2, p3));
+        List<Person> people = new ArrayList<>(Arrays.asList(p1, p2, p3, p4, p5));
         List<Integer> list = people.stream()
                 .map(Person::getAge)
                 .filter(age -> age > 30)
-                .limit(1)
+                .skip(1)
+                .limit(2)
                 .collect(Collectors.toList());
         System.out.println(list);
     }
