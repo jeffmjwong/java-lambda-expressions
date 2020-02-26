@@ -28,7 +28,8 @@ public class Main {
         System.out.println(builder);
         builder.add("one").add("two").add("three");
         builder.accept("four");
-        System.out.println(builder);
+        Stream<String> stream2 = builder.build();
+        System.out.println(stream2.collect(Collectors.toList()));
     }
 
     private static void useNewMethodsOfCollections() {
