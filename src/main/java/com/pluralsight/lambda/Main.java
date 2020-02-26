@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
@@ -22,7 +23,8 @@ public class Main {
         Person p5 = new Person("Elliot", "W", 37);
 
         List<Person> people = new ArrayList<>(Arrays.asList(p1, p2, p3, p4, p5));
-        System.out.println(people.stream().noneMatch(p -> p.getAge() > 60));
+        Optional<Person> optional1 = people.stream().filter(p -> p.getAge() > 20).findAny();
+        System.out.println(optional1);
     }
 
     private static void useNewMethodsOfCollections() {
