@@ -12,6 +12,7 @@ import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.function.UnaryOperator;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Main {
@@ -23,10 +24,11 @@ public class Main {
         List<Person> people = new ArrayList<>(Arrays.asList(p1, p2, p3));
         Stream<Person> stream = people.stream();
         System.out.println(stream);
-        System.out.println(Stream.empty().collect(Collectors.toList()));
-        System.out.println(Stream.of("one", "two").collect(Collectors.toList()));
+        System.out.println(stream.collect(Collectors.toList()));
 
-        System.out.println(ThreadLocalRandom.current().ints());
+        IntStream stream1 = "hello".chars();
+        System.out.println(stream1);
+        System.out.println(stream1.count());
 
 //        List<Integer> ages = Lists.map(people, Person::getAge);
 //        List<Integer> agesGreaterThan20 = Lists.filter(ages, age -> age > 50);
