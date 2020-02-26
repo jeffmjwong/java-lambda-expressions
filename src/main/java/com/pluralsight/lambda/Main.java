@@ -26,6 +26,8 @@ public class Main {
 
         Stream.Builder<String> builder = Stream.builder();
         System.out.println(builder);
+        builder.add("one").add("two").add("three");
+        System.out.println(builder);
     }
 
     private static void useNewMethodsOfCollections() {
