@@ -22,13 +22,7 @@ public class Main {
         Person p5 = new Person("Elliot", "W", 37);
 
         List<Person> people = new ArrayList<>(Arrays.asList(p1, p2, p3, p4, p5));
-        List<Integer> list = people.stream()
-                .map(Person::getAge)
-                .filter(age -> age > 30)
-                .skip(1)
-                .limit(2)
-                .collect(Collectors.toList());
-        System.out.println(list);
+        System.out.println(people.stream().noneMatch(p -> p.getAge() > 60));
     }
 
     private static void useNewMethodsOfCollections() {
