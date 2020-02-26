@@ -20,16 +20,10 @@ public class Main {
         Person p3 = new Person("Chelsea", "T", 46);
 
         List<Person> people = new ArrayList<>(Arrays.asList(p1, p2, p3));
-        Stream<Person> stream = people.stream();
-        System.out.println(stream);
-        System.out.println(stream.collect(Collectors.toList()));
-
-        Stream.Builder<String> builder = Stream.builder();
-        System.out.println(builder);
-        builder.add("one").add("two").add("three");
-        builder.accept("four");
-        Stream<String> stream2 = builder.build();
-        System.out.println(stream2.collect(Collectors.toList()));
+        people.stream()
+                .map(Person::getAge)
+                .filter(age -> age > 30)
+                .forEach(System.out::println);
     }
 
     private static void useNewMethodsOfCollections() {
