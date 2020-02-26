@@ -20,10 +20,12 @@ public class Main {
         Person p3 = new Person("Chelsea", "T", 46);
 
         List<Person> people = new ArrayList<>(Arrays.asList(p1, p2, p3));
-        people.stream()
+        List<Integer> list = people.stream()
                 .map(Person::getAge)
                 .filter(age -> age > 30)
-                .forEach(System.out::println);
+                .limit(1)
+                .collect(Collectors.toList());
+        System.out.println(list);
     }
 
     private static void useNewMethodsOfCollections() {
