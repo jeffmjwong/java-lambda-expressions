@@ -24,6 +24,10 @@ public class Main {
         System.out.println(stream);
         System.out.println(Stream.empty().collect(Collectors.toList()));
         System.out.println(Stream.of("one", "two").collect(Collectors.toList()));
+        Stream<String> stream1 = Stream.generate(() -> "one");
+        Stream<String> stream2 = Stream.iterate("+", s -> "one" + s);
+        System.out.println(stream1);
+        System.out.println(stream2.collect(Collectors.joining()));
 
 //        List<Integer> ages = Lists.map(people, Person::getAge);
 //        List<Integer> agesGreaterThan20 = Lists.filter(ages, age -> age > 50);
