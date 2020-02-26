@@ -6,13 +6,11 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.function.UnaryOperator;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Main {
@@ -26,14 +24,8 @@ public class Main {
         System.out.println(stream);
         System.out.println(stream.collect(Collectors.toList()));
 
-        IntStream stream1 = "hello".chars();
-        System.out.println(stream1);
-        System.out.println(stream1.count());
-
-//        List<Integer> ages = Lists.map(people, Person::getAge);
-//        List<Integer> agesGreaterThan20 = Lists.filter(ages, age -> age > 50);
-//        int sum = Lists.reduce(agesGreaterThan20, Integer::max);
-//        System.out.println(sum);
+        Stream.Builder<String> builder = Stream.builder();
+        System.out.println(builder);
     }
 
     private static void useNewMethodsOfCollections() {
