@@ -23,8 +23,8 @@ public class Main {
         Person p5 = new Person("Elliot", "W", 37);
 
         List<Person> people = new ArrayList<>(Arrays.asList(p1, p2, p3, p4, p5));
-        Optional<Person> optional1 = people.stream().filter(p -> p.getAge() > 20).findAny();
-        System.out.println(optional1);
+        Optional<Integer> sumOfAges = people.stream().map(Person::getAge).reduce(Integer::sum);
+        System.out.println(sumOfAges);
     }
 
     private static void useNewMethodsOfCollections() {
