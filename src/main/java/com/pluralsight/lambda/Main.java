@@ -29,6 +29,8 @@ public class Main {
                 Integer::sum
         );
         System.out.println(sumOfAges);
+
+        Stream.generate(() -> "one").limit(5).forEach(System.out::println);
     }
 
     private static void useNewMethodsOfCollections() {
