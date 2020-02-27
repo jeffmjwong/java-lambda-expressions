@@ -31,6 +31,7 @@ public class Main {
         System.out.println(sumOfAges);
 
         Stream.generate(() -> "one").limit(5).forEach(System.out::println);
+        Stream.iterate("+", s -> s + "+").limit(5).forEach(System.out::println);
     }
 
     private static void useNewMethodsOfCollections() {
