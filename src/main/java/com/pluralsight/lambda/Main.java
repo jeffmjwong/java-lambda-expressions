@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
@@ -32,6 +33,7 @@ public class Main {
 
         Stream.generate(() -> "one").limit(5).forEach(System.out::println);
         Stream.iterate("+", s -> s + "+").limit(5).forEach(System.out::println);
+        ThreadLocalRandom.current().ints().limit(5).forEach(System.out::println);
     }
 
     private static void useNewMethodsOfCollections() {
