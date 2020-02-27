@@ -23,7 +23,11 @@ public class Main {
         Person p5 = new Person("Elliot", "W", 37);
 
         List<Person> people = new ArrayList<>(Arrays.asList(p1, p2, p3, p4, p5));
-        Optional<Integer> sumOfAges = people.stream().map(Person::getAge).reduce(Integer::sum);
+        int sumOfAges = people.stream().reduce(
+                0,
+                (acc, p) -> acc + p.getAge(),
+                Integer::sum
+        );
         System.out.println(sumOfAges);
     }
 
